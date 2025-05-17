@@ -5,8 +5,7 @@ This is a web-based application designed to help detect common pet diseases usin
 
 ## 🖼️ Project Preview
 
-![Homepage Screenshot](![homepage](https://github.com/user-attachments/assets/425601c6-1f1a-4742-a66e-46115fdfcd23)
-)
+![Homepage Screenshot](homepage.jpeg)
 
 ## 🔍 Features
 
