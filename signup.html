@@ -416,52 +416,6 @@
             }
         }
 
-        // Login function
-        // function login(type) {
-        //     const email = document.getElementById(`${type}-email`).value;
-        //     const password = document.getElementById(`${type}-password`).value;
-        //     const errorElement = document.getElementById(`${type}-error`);
-        //     const successElement = document.getElementById(`${type}-success`);
-            
-        //     // Clear previous messages
-        //     errorElement.style.display = 'none';
-        //     successElement.style.display = 'none';
-            
-        //     // Validate inputs
-        //     if (!email) {
-        //         errorElement.textContent = 'Please enter your email or phone number';
-        //         errorElement.style.display = 'block';
-        //         return;
-        //     }
-            
-        //     if (!password) {
-        //         errorElement.textContent = 'Please enter your password';
-        //         errorElement.style.display = 'block';
-        //         return;
-        //     }
-            
-        //     // Simulate API call with loading state
-        //     simulateAPICall(() => {
-        //         // This is just for demo - in a real app you would verify credentials
-        //         if (password.length < 6) {
-        //             errorElement.textContent = 'Invalid credentials. Please try again.';
-        //             errorElement.style.display = 'block';
-        //         } else {
-        //             successElement.textContent = 'Login successful! Redirecting...';
-        //             successElement.style.display = 'block';
-                    
-        //             // Redirect to dashboard after 1 second
-        //             setTimeout(() => {
-        //                 window.location.href = 'userinterface.html';
-        //             }, 1000);
-        //         }
-        //     });
-        // }
-
-
-
-
-
         function login(type) {
     const email = document.getElementById(`${type}-email`).value;
     const password = document.getElementById(`${type}-password`).value;
