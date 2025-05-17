@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bovine Disease Encyclopedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+           background-image: url('https://cdn5.vectorstock.com/i/1000x1000/76/84/blue-pet-or-animal-footprint-seamless-pattern-vector-3007684.jpg');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Centers the background image */
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(248, 249, 250, 0.8); /* Adds a slight background color for readability */
+            border-radius: 10px; /* Optional: rounds the corners of the container */
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            background-color: #4a6fa5;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .disease-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .disease-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .disease-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .disease-header {
+            background-color: #3a5a8f;
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .disease-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .pet-type {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .disease-content {
+            display: flex;
+            min-height: 300px;
+        }
+        
+        .disease-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .disease-image::after {
+            content: attr(alt);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        .disease-info {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+        
+        .disease-info h3 {
+            color: #4a6fa5;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .disease-info p {
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list li {
+            margin-bottom: 5px;
+        }
+        
+        .severity {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .severity-high {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .severity-medium {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .severity-low {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .disease-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .disease-content {
+                flex-direction: column;
+            }
+            
+            .disease-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cow Disease Encyclopedia</h1>
+            <p class="subtitle">Comprehensive guide to common cattle illnesses and treatments</p>
+        </header>
+        
+        <div class="disease-container">
+            <!-- Disease 1 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Mastitis <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Cow</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/04/Cattle-Diseases-Mastitis.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Cow udder showing signs of mastitis"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Inflammation of the udder tissue that causes significant economic losses in dairy production. Most common in high-producing dairy cows during early lactation.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Swollen, hot, painful udder</li>
+                            <li>Abnormal milk (flakes, clots, watery)</li>
+                            <li>Reduced milk yield</li>
+                            <li>Reluctance to be milked</li>
+                            <li>Fever in severe cases</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Intramammary antibiotics, anti-inflammatory drugs. Milk out affected quarters frequently. Improve milking hygiene and teat care. Isolate infected animals.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 2 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Bovine Spongiform Encephalopathy (BSE) <span class="severity severity-critical">Critical</span></div>
+                    <div class="pet-type">Cow</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/04/Mad-Cow-Disease-696x391.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Cow displaying neurological symptoms"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Fatal neurodegenerative disease caused by prions. Affects the brain and spinal cord, causing sponge-like holes in brain tissue.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Behavioral changes (nervousness, aggression)</li>
+                            <li>Difficulty standing/walking</li>
+                            <li>Loss of coordination</li>
+                            <li>Weight loss despite normal appetite</li>
+                            <li>Progressive neurological deterioration</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>No treatment available. Prevention through strict feed bans on ruminant-derived proteins. Mandatory reporting and culling of affected animals.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 3 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Calf Scour <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Calves</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/04/Calf-Scours.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Calf with diarrhea"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Leading cause of calf mortality worldwide. Can be caused by bacteria (E. coli, Salmonella), viruses (Rotavirus, Coronavirus), or parasites (Cryptosporidium).</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Watery diarrhea (yellow, white or bloody)</li>
+                            <li>Dehydration (sunken eyes, skin tenting)</li>
+                            <li>Weakness and depression</li>
+                            <li>Reduced suckling reflex</li>
+                            <li>Rough hair coat</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Oral rehydration solutions, electrolytes. Antibiotics for bacterial causes. Ensure colostrum intake. Keep calves warm and dry. Isolate sick calves.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 4 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Foot Rot <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Cattle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://agritech.tnau.ac.in/expert_system/cattlebuffalo/Images/Content%20photos/Foot%20Rot02.png');" alt="Cow hoof with foot rot"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Bacterial infection (Fusobacterium necrophorum) of the hoof that thrives in wet, muddy conditions. Causes severe lameness if untreated.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Sudden lameness (often one leg)</li>
+                            <li>Swelling between claws</li>
+                            <li>Foul-smelling discharge</li>
+                            <li>Fever in acute cases</li>
+                            <li>Reluctance to bear weight</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Systemic antibiotics (penicillin, oxytetracycline). Foot baths with zinc sulfate or copper sulfate. Keep animals in dry areas. Regular hoof trimming.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 5 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Foot and Mouth Disease <span class="severity severity-critical">Critical</span></div>
+                    <div class="pet-type">Cattle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://agritech.tnau.ac.in/expert_system/cattlebuffalo/Images/Content%20photos/Profuse%20Salivation.png');" alt="Cow mouth lesions from FMD"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Highly contagious viral disease affecting cloven-hoofed animals. Causes significant economic losses due to trade restrictions.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Fever (104-106°F)</li>
+                            <li>Excessive drooling</li>
+                            <li>Vesicles on tongue, gums, teats, hooves</li>
+                            <li>Severe lameness</li>
+                            <li>Drop in milk production</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>No specific treatment. Vaccination in endemic areas. Strict quarantine measures. Report to authorities immediately if suspected.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 6 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Anthrax <span class="severity severity-critical">Critical</span></div>
+                    <div class="pet-type">Cattle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://agritech.tnau.ac.in/expert_system/cattlebuffalo/Images/Content%20photos/anthrax.jpg');" alt="Cow carcass showing signs of anthrax"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Zoonotic disease caused by Bacillus anthracis spores that can survive in soil for decades. Often causes sudden death in grazing animals.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Sudden death (often first sign)</li>
+                            <li>High fever before death</li>
+                            <li>Staggering, difficulty breathing</li>
+                            <li>Bloody discharge from natural openings</li>
+                            <li>Rapid bloating after death</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Report immediately to authorities. Do NOT necropsy. Vaccination in endemic areas. Carcasses must be burned or buried deep with lime.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 7 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Bovine Abortion <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Cows</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://agritech.tnau.ac.in/expert_system/cattlebuffalo/Images/Content%20photos/Expulsion%20of%20dead%20calf.png');" alt="Aborted bovine fetus"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Premature termination of pregnancy with multiple potential causes including infectious agents, toxins, and nutritional deficiencies.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Vaginal discharge (often bloody)</li>
+                            <li>Expulsion of fetus</li>
+                            <li>Retained placenta</li>
+                            <li>Decreased milk production</li>
+                            <li>Metritis in some cases</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Identify and address underlying cause. Proper disposal of aborted materials. Vaccinate against common abortifacient diseases. Improve nutrition.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 8 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Actinomycosis (Lumpy Jaw) <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Cattle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://agritech.tnau.ac.in/expert_system/cattlebuffalo/Images/Content%20photos/02%20Swelling%20of%20lower%20jaw%20or%20mandibular%20region.png');" alt="Cow with swollen jaw"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Chronic bacterial infection causing bony swellings of the jaw. Typically enters through mouth wounds from rough feed or sharp objects.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Hard, painless jaw swelling</li>
+                            <li>Progressive enlargement</li>
+                            <li>Difficulty chewing</li>
+                            <li>Weight loss</li>
+                            <li>Pus discharge in advanced cases</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Long-term antibiotics (penicillin, iodides). Surgical drainage may be needed. Remove sharp objects from feed. Poor prognosis in advanced cases.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 9 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Ephemeral Fever <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Cattle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/OIP._ldEoxq7jO46_ZTAvzqPAwHaD4?w=327&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7');" alt="Cow showing signs of fever"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Viral disease transmitted by biting insects. Seasonal occurrence, often following heavy rains that increase insect populations.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Sudden high fever (104-107°F)</li>
+                            <li>Muscle stiffness and lameness</li>
+                            <li>Shivering and trembling</li>
+                            <li>Nasal discharge</li>
+                            <li>Recumbency in severe cases</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Supportive care (anti-inflammatories, fluids). Most animals recover in 3-5 days. Control insect vectors. Vaccine available in some countries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

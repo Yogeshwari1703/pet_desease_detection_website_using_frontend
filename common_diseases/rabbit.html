@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabbit Disease Encyclopedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-image: url('https://cdn5.vectorstock.com/i/1000x1000/76/84/blue-pet-or-animal-footprint-seamless-pattern-vector-3007684.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(248, 249, 250, 0.8);
+            border-radius: 10px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            background-color: #4a6fa5;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .disease-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .disease-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .disease-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .disease-header {
+            background-color: #3a5a8f;
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .disease-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .pet-type {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .disease-content {
+            display: flex;
+            min-height: 300px;
+        }
+        
+        .disease-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .disease-image::after {
+            content: attr(alt);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        .disease-info {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+        
+        .disease-info h3 {
+            color: #4a6fa5;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .disease-info p {
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list li {
+            margin-bottom: 5px;
+        }
+        
+        .severity {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .severity-high {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .severity-medium {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .severity-low {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .disease-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .disease-content {
+                flex-direction: column;
+            }
+            
+            .disease-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rabbit Disease Encyclopedia</h1>
+            <p class="subtitle">Comprehensive guide to common rabbit illnesses and treatments</p>
+        </header>
+        
+        <div class="disease-container">
+            <!-- Disease 1 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Respiratory Tract Infections (Snuffles) <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Rabbit</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.pdsa.org.uk/media/8739/discharge-rabbit.jpg');" alt="Rabbit with respiratory infection"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Upper respiratory infection often caused by <em>Pasteurella multocida</em> or <em>Moraxella catarrhalis</em>. Can become chronic and spread to other organs.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Sneezing, nasal discharge (mucus/pus)</li>
+                            <li>Eye discharge, redness, squinting</li>
+                            <li>Crusty fur on paws from rubbing</li>
+                            <li>Head tilt (if ears infected)</li>
+                            <li>Abscesses, pneumonia, or sudden death in severe cases</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Long-term antibiotics (months), surgical drainage of abscesses. Rarely fully cured.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 2 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Encephalitozoon cuniculi <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Rabbit</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.vettimes.co.uk/app/uploads/2022/01/VT45.31-Mancinelli_Fig-1.jpg');" alt="Rabbit with neurological symptoms"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Microsporidian parasite affecting brain, eyes, kidneys, and GI tract. Causes permanent damage.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Head tilt, rolling, imbalance</li>
+                            <li>White fluffy material in eye (permanent)</li>
+                            <li>Kidney failure (weight loss, dehydration)</li>
+                            <li>Recurring GI stasis</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Fenbendazole (anti-parasitic), supportive care. Early treatment critical.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 3 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Gastrointestinal (GI) Stasis <span class="severity severity-high">Critical</span></div>
+                    <div class="pet-type">Rabbit</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.vettimes.com/_next/image?url=https%3A%2F%2Ftesting-vettimes-next.sfo3.digitaloceanspaces.com%2F2012%2F11%2FVT42.47-Clark_Obese-rabbit-768x404.jpg&w=1080&q=100');" alt="Rabbit with digestive issues"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Life-threatening slowdown of gut motility due to stress, dental disease, or infections.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>No appetite, small/no fecal pellets</li>
+                            <li>Lethargy, hunched posture</li>
+                            <li>Bloating, loud gut sounds (or silence)</li>
+                            <li>Tooth grinding (pain)</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Emergency vet care: fluids, syringe feeding, pain relief, motility drugs (e.g., cisapride).</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 4 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Tyzzer Disease <span class="severity severity-high">Critical</span></div>
+                    <div class="pet-type">Rabbit</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://edge.sitecorecloud.io/mmanual-ssq1ci05/media/veterinary/images/c/o/l/colitis-tyzzers-disease-rabbit-uzal-web.jpg?mw=1920&thn=0&sc_lang=en');" alt="Rabbit with diarrhea"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Caused by <em>Clostridium piliforme</em>. Damages intestines, liver, and heart. 90% mortality in outbreaks.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Watery diarrhea, dehydration</li>
+                            <li>Lethargy, stained hindquarters</li>
+                            <li>Death within 1–3 days (acute cases)</li>
+                            <li>Wasting disease in chronic cases</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Oxytetracycline may help. Disinfect with 1% peracetic acid or 3% bleach. Often fatal.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 5 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Rabbit Hemorrhagic Disease (RHDV2) <span class="severity severity-high">Critical</span></div>
+                    <div class="pet-type">Rabbit</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/OIP.kMSzeg0hvMJ8MtlNQStcyAHaE5?rs=1&pid=ImgDetMain');" alt="Rabbit with hemorrhagic disease"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Highly contagious calicivirus causing liver damage and internal bleeding. 60–90% mortality.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Sudden death (often no prior signs)</li>
+                            <li>Fever, lethargy before death</li>
+                            <li>Liver failure, hemorrhaging</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>No cure. Prevention: Vaccination (2-dose series + boosters) and strict biosecurity.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 6 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Treponematosis (Rabbit Syphilis) <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Rabbit</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/R.9d8b2f019f13e3ea528931d4dc4d8397?rik=Pl52HTGC45E3Dw&riu=http%3a%2f%2fwww.raising-rabbits.com%2fimages%2frabbitsyphilis14dayRxs.jpg&ehk=Cqj5zEeOJXp73aq383rzmrHXFtk4ayL8%2fGX0p%2fhhsGM%3d&risl=&pid=ImgRaw&r=0');" alt="Rabbit with genital lesions"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Venereal disease caused by <em>Treponema</em> bacteria. Spread via mating or mother-to-offspring.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Blisters/scabs on genitals, lips, eyelids</li>
+                            <li>Slow-healing sores</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Penicillin injections (never oral). Heals in 10–14 days. Isolate infected rabbits.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disease 7 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Moraxella catarrhalis Infection <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Rabbit</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/R.56b7da34cfc95cf5ca0a26ec163faeb2?rik=Do1kNqAZ%2fVLsyA&riu=http%3a%2f%2fmicrobe-canvas.com%2fuploads%2fimage%2fbacterien%2fmoraxella-catarrhalis%2fmoraxella-catarrhalis_f91_atcc_cult_gram-1_f-350x220.jpg&ehk=pV9sh5a9WAShlyfWQuX0mBi9FAIC6FyqOdqJEV3TDRk%3d&risl=&pid=ImgRaw&r=0');" alt="Rabbit with respiratory distress"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Respiratory pathogen often co-occurring with other infections. Linked to stress and poor hygiene.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Diarrhea, bloating</li>
+                            <li>Loss of appetite, weight loss</li>
+                            <li>Eye/nasal discharge (if respiratory)</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Antibiotics (vet-supervised), stress reduction, and improved sanitation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disease 8 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Epizootic Rabbit Enteropathy <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Rabbit</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.veterinary-practice.com/wp-content/uploads/2023/06/Figure-2-scaled.jpeg');" alt="Rabbit with digestive issues"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Highly contagious bacterial disease (unknown pathogen) causing severe GI symptoms.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Watery diarrhea, mucous excretion</li>
+                            <li>Distended abdomen, rumbling gut</li>
+                            <li>Cecal impaction, high mortality</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Supportive care, isolate infected rabbits. No specific treatment known.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disease 9 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Colibacillosis (E. coli) <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Rabbit</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/OIP.lwLmY_foBn1aS5x-OJiwNwHaFP?rs=1&pid=ImgDetMain');" alt="Rabbit with diarrhea"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p><em>E. coli</em>-induced diarrhea, often fatal in young rabbits.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Yellowish diarrhea (fatal in 1–2-week-olds)</li>
+                            <li>Weight loss, stunted growth (weaned kits)</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Antibiotics in mild cases. Sanitize environment. High-fiber diets may prevent.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disease 10 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Ringworm <span class="severity severity-low">Mild</span></div>
+                    <div class="pet-type">Rabbit</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://binkybunny.com/wp-content/uploads/converted_files/Portals/0/activeforums_Attach/poorsawyerear.jpg');" alt="Rabbit with skin lesions"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Fungal infection (<em>Trichophyton mentagrophytes</em>) spread by direct contact. Zoonotic.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Patchy hair loss (head first)</li>
+                            <li>Dry, flaky, red skin (non-itchy)</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Antifungal creams/oral meds. Isolate rabbit; wear gloves when handling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

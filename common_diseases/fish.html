@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Disease Encyclopedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+           background-image: url('https://cdn5.vectorstock.com/i/1000x1000/76/84/blue-pet-or-animal-footprint-seamless-pattern-vector-3007684.jpg');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Centers the background image */
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(248, 249, 250, 0.8); /* Adds a slight background color for readability */
+            border-radius: 10px; /* Optional: rounds the corners of the container */
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            background-color: #4a6fa5;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .disease-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .disease-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .disease-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .disease-header {
+            background-color: #3a5a8f;
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .disease-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .pet-type {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .disease-content {
+            display: flex;
+            min-height: 300px;
+        }
+        
+        .disease-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .disease-image::after {
+            content: attr(alt);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        .disease-info {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+        
+        .disease-info h3 {
+            color: #4a6fa5;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .disease-info p {
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list li {
+            margin-bottom: 5px;
+        }
+        
+        .severity {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .severity-high {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .severity-medium {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .severity-low {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .disease-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .disease-content {
+                flex-direction: column;
+            }
+            
+            .disease-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fish Disease Encyclopedia</h1>
+            <p class="subtitle">Comprehensive guide to common fish illnesses and treatments</p>
+        </header>
+        
+        <div class="disease-container">
+            <!-- Disease 1: Ammonia Poisoning -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Ammonia Poisoning <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Fish</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/OIP.GV_amplf_PUs2p_AXBV5bwHaEV?rs=1&pid=ImgDetMain');" alt="Fish with ammonia poisoning"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Though technically not a disease, ammonia poisoning is incredibly common in new fish tanks. Ammonia is a byproduct of the process of organic material breaking down and it can be incredibly toxic for fish. Nitrifying bacteria convert ammonia into nitrite and then into nitrate, which is less harmful.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Labored breathing</li>
+                            <li>Gasping at the surface</li>
+                            <li>Loss of appetite</li>
+                            <li>Lethargy</li>
+                            <li>Red streaks on the body</li>
+                            <li>Red or inflamed gills</li>
+                            <li>Lying at the bottom of the tank</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Prevention is the best option. Make sure any new tank has gone through the nitrogen cycle and has a fully established colony of beneficial bacteria before adding fish. Ammonia spikes can be managed with frequent water changes. It may also help to siphon your substrate during water changes to remove accumulated organic matter.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 2: Anchor Worms -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Anchor Worms <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Fish</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.nt-labs.com/vendor/timthumb/timthumb.php?src=/library/images/5c657bc816571-aquarium---lice-and-leeches.jpg&w=640');" alt="Fish with anchor worms"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Not actually a worm but rather a parasitic crustacean, anchor worms are most commonly seen in pond fish but can infect aquarium fish as well. These parasites embed themselves in the muscle, sometimes burrowing into the internal organs. A raised ulcer typically forms at the point of attachment and may provide an opportunity for secondary infections to set in.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Red, inflamed skin</li>
+                            <li>Visible worms</li>
+                            <li>Ulcers</li>
+                            <li>Rubbing or brushing against tank objects</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Anchor worms are usually only seen in outdoor koi ponds and newly imported tropical fish. Quarantine is essential for all new fish and any that have been infected with anchor worms. Remove adult worms by hand using forceps and treat the wound with fish-safe antiseptic. Continue removing them weekly until no more adult worms develop.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 3: Bacterial Infection (Aeromonas) -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Bacterial Infection (Aeromonas) <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Fish</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://pub.mdpi-res.com/pathogens/pathogens-12-00598/article_deploy/html/images/pathogens-12-00598-g001.png?1681711022');" alt="Fish with bacterial infection"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Bacterial infections commonly occur as secondary infections after a fish has sustained an injury. Fish that are stressed by poor water quality may be more susceptible to these infections as well. One of the most common bacteria to affect fish is Aeromonas salmonicida. These bacteria can affect multiple systems in an infected fish's body.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Swollen eyes</li>
+                            <li>Fluid accumulation in the abdomen</li>
+                            <li>Dropsy (abnormal fluid retention) due to kidney damage</li>
+                            <li>Ragged fins</li>
+                            <li>Hemorrhagic lesions</li>
+                            <li>Skin and gill ulcers</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Antibacterial medications are generally the best treatment for bacterial infections. Many antibacterial formulations are less effective in water and are best administered by injection or in food.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 4: Brooklynellosis -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Brooklynellosis (Anemonefish Disease) <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Fish</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://content.invisioncic.com/Mnanoreef/imageproxy/935186d8d5753ad6490634c379e686f6.jpg.cddc53aa9423cae79e6a359ec5d67496.jpg');" alt="Anemonefish with disease"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Caused by a ciliated protozoa called Brooklynella hostilis, this disease most commonly affects anemonefish but will infect others as well. It usually develops when the fish are extremely stressed, such as when they are overcrowded in retail stores or shipped.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Sloughing of the epithelium</li>
+                            <li>Increased mucus secretions</li>
+                            <li>Lethargy</li>
+                            <li>Respiratory distress</li>
+                            <li>Loss of appetite</li>
+                            <li>Discolored skin</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>The most common treatment for this disease is a combination of formalin and malachite green. Malachite green can be dosed at a concentration of 0.10 ppm for 7 to 10 days. Formalin is best administered as a bath with 0.5 mL of formalin per gallon of water. Take care when using formalin on fish with severe skin damage, as they may be more sensitive.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 5: Columnaris -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Columnaris (Mouth Fungus) <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Fish</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsCQrajXl-0YOPfGVYVHzOHuD175GHZxfH49JPdn2HmcGxUecrqUOJAPnEt4RiJB_GMk0&usqp=CAU');" alt="Fish with columnaris"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Also known as cotton mouth or mouth fungus, this disease is caused by Columnaris bacteria. They appear as white or gray spots on the head, fin and gills, which progress into cottony growths.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Cottony growths</li>
+                            <li>Raised skin patches</li>
+                            <li>Pale gills</li>
+                            <li>Lethargy</li>
+                            <li>Loss of appetite</li>
+                            <li>Difficulty swimming</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>This bacterial infection is best treated with injectable antibiotics. According to a 2013 study, external treatment with antimicrobial agents may be effective but only in the early stages of the disease.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 6: Dropsy -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Dropsy <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Fish</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://theaquariumguide.com/wp-content/uploads/2018/08/Dropsy-Fish-Disease.jpg');" alt="Fish with dropsy"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Also known as edema, dropsy is a symptom of disease characterized by swelling in the abdomen. Fish with dropsy are sometimes said to be "pineconing," which refers to a bristly appearance they take on when swelling causes their scales to protrude.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Swollen abdomen</li>
+                            <li>Protruding scales</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Opportunistic bacterial infections are a common cause of dropsy and can be treated with antibacterial medications. Metronidazole may be effective for protozoan infections, but viral causes of dropsy can be very difficult to treat.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 7: Fin Rot -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Fin Rot <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Fish</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/OIP.L9DUm2qc67P2GWhs8eIIaQHaEz?rs=1&pid=ImgDetMain');" alt="Fish with fin rot"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Fin rot is characterized by the rotting or fraying of a fish's fins and/or tail. You may also notice swelling at the base of the fin, and in severe cases, the fin or tail may deteriorate completely.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Changing color of fins or tail</li>
+                            <li>Frayed edges</li>
+                            <li>Inflammation at the base</li>
+                            <li>Deterioration of fins and/or tail</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Fin rot is often the result of poor water quality but can be exacerbated by fin nipping or bullying behaviors by other fish. Improving tank conditions is a must. In some cases, bacterial infection is involved, in which case antibiotic treatment may be warranted.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 8: Flukes -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Flukes <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Fish</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://diyseattle.com/wp-content/uploads/images/fish/2022-02/how-do-i-know-if-my-fish-has-flukes.jpg');" alt="Fish with flukes"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Microscopic parasites found in a fish's gills or skin, flukes are generally caused by Gyrodactylus (skin flukes) or Dactylogyrus (gill flukes). Although flukes are too small to see with the naked eye, you can detect them by the irritation they cause.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Skin irritation</li>
+                            <li>Missing scales</li>
+                            <li>Red spots</li>
+                            <li>Increased mucus production</li>
+                            <li>Flashing</li>
+                            <li>Lethargy</li>
+                            <li>Loss of appetite</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Poor water quality, overcrowding and improper diet are key contributors to flukes in fish. Treatment depends on the type of parasite, so proper identification is essential. Formalin is a common treatment but should be used with caution. It removes dissolved oxygen from the water and, in high doses, could cause toxicity.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 9: Gold Dust Disease (Velvet) -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Gold Dust Disease (Velvet) <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Fish</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://cdn11.bigcommerce.com/s-m39bqdjce8/product_images/uploaded_images/fish-disease-spotlight-velvet-disease.jpg');" alt="Fish with velvet disease"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Caused by a protozoan parasite that attacks the skin and gills, velvet is also called gold dust disease due to its dusty yellow appearance on the skin. Velvet is caused by different parasites in freshwater and marine fish, with freshwater velvet being caused by Piscinoodinium (or simply Oodinium) and marine velvet being caused by Amyloodinium parasites.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Dusty yellow appearance</li>
+                            <li>Tiny spots on the fins and body</li>
+                            <li>Flashing against surfaces</li>
+                            <li>Loss of appetite</li>
+                            <li>Lethargy</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Veterinarians typically recommend chloroquine for treating velvet in aquarium fish. Be sure to follow the instructions carefully and check for the return of symptoms after 7 to 10 days.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 10: Hexamitiasis -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Hexamitiasis <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Fish</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://aquariumscience.org/wp-content/uploads/2022/04/HITH-28.jpg');" alt="Fish with hexamita"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Another protozoan parasite, Hexamita, most commonly affects cichlids, gourami and betta fish. They attack the intestines of fish that are already stressed by crowded conditions, poor water quality or shipping, causing weight loss and, in serious cases, death.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Weight loss</li>
+                            <li>Loss of appetite</li>
+                            <li>White, stringy feces</li>
+                            <li>Death</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Prompt treatment of hexamita infestation is essential to prevent serious weight loss and death. If the fish is still eating, the best treatment is metronidazole in food. If the fish has stopped eating, add the medication to the water at a dosage of 250 mg per 10 gallons.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

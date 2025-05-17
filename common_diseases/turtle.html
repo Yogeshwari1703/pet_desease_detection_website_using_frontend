@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtle Disease Encyclopedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-image: url('https://img.freepik.com/premium-vector/pastel-brown-cat-dog-paw-print-pattern-background_995012-285.jpg?w=740');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Centers the background image */
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(248, 249, 250, 0.8); /* Adds a slight background color for readability */
+            border-radius: 10px; /* Optional: rounds the corners of the container */
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            background-color: #4a6fa5;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .disease-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .disease-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .disease-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .disease-header {
+            background-color: #3a5a8f;
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .disease-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .pet-type {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .disease-content {
+            display: flex;
+            min-height: 300px;
+        }
+        
+        .disease-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .disease-image::after {
+            content: attr(alt);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        .disease-info {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+        
+        .disease-info h3 {
+            color: #4a6fa5;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .disease-info p {
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list li {
+            margin-bottom: 5px;
+        }
+        
+        .severity {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .severity-high {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .severity-medium {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .severity-low {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .disease-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .disease-content {
+                flex-direction: column;
+            }
+            
+            .disease-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Turtle Disease Encyclopedia</h1>
+            <p class="subtitle">Comprehensive guide to common turtle illnesses and treatments</p>
+        </header>
+        
+        <div class="disease-container">
+            <!-- Disease 1: Nutritional Diseases -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Nutritional Diseases <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Turtle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://reptilesmagazine.com/wp-content/uploads/data-import/6fd47469/turtle12.jpg');" alt="Turtle with nutritional disease"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Nutritional diseases of turtles have become less common due to better husbandry information and commercially available turtle diets. "Soft shell" (nutritional secondary hyperparathyroidism) is caused by inadequate dietary calcium and vitamin D, excessive phosphorus, and lack of UV light.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Soft shell</li>
+                            <li>Broken bones</li>
+                            <li>Weakness</li>
+                            <li>Swollen eyes (vitamin A deficiency)</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Early cases are reversible with diet correction, high-calcium foods, calcium and vitamin D3 supplements, and proper UV lighting. Vitamin A deficiency is treated with prescription vitamin A. Natural sunlight is ideal when possible.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 2: Infectious Diseases -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Infectious Diseases <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Turtle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://reptilesmagazine.com/wp-content/uploads/data-import/6fd47469/turtle3.jpg');" alt="Turtle with infection"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Infections are common in aquatic turtles and can affect the shell, respiratory tract, skin, ears, and digestive tract. In severe cases, infection can spread through the entire body via the circulatory system.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Shell discoloration</li>
+                            <li>Bleeding or soft spots on shell</li>
+                            <li>Abnormal keratin sloughing</li>
+                            <li>Bad odor</li>
+                            <li>Respiratory distress</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Treatment depends on the type and severity of infection. Shell infections range from mild topical treatments to severe cases requiring surgery for osteomyelitis (bone infection). Antibiotics are typically required.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 3: Reproductive Diseases -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Reproductive Diseases <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Turtle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://reptilesmagazine.com/wp-content/uploads/data-import/6fd47469/turtle2.jpg');" alt="Turtle with reproductive issues"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Female turtles can develop reproductive issues including follicular stasis (failed ovulation), yolk coelomitis (leaking yolk material), and egg retention. Males may experience penis prolapse.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Lethargy</li>
+                            <li>Loss of appetite</li>
+                            <li>Straining</li>
+                            <li>Visible prolapse (in males)</li>
+                            <li>Abnormal swimming</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Many cases can be managed medically or surgically if detected early. Minimally invasive surgery techniques can remove retained eggs or diseased ovaries. Spaying female turtles can prevent future problems.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 4: Vitamin A Deficiency -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Vitamin A Deficiency <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Turtle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.turtletimes.com/wp-content/uploads/2021/10/turtles-aquatic-diseases-1.jpg');" alt="Turtle with vitamin deficiency"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Hypovitaminosis A occurs when turtles are fed an inappropriate diet (iceberg lettuce, all-meat diet, or poor-quality commercial diet). It affects skin, mucus-producing glands, and membranes.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Swollen eyelids (often with discharge)</li>
+                            <li>Ear abscesses</li>
+                            <li>Chronic respiratory infections</li>
+                            <li>Lack of appetite</li>
+                            <li>Lethargy</li>
+                            <li>Kidney failure</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Treatment involves correcting the diet and vitamin A supplementation by prescription. Respiratory infections secondary to vitamin A deficiency may require additional antibiotic treatment.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 5: Shell Infections -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Shell Infections <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Turtle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://i.redd.it/ivyi0imo5zo01.png');" alt="Turtle with shell infection"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Shell rot is caused by bacteria, fungi, or parasites, often secondary to trauma, burns, or bites. Infections can penetrate deep into shell layers, causing ulcers, pitting, or bone infection.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Discolored shell</li>
+                            <li>Pitting or ulcers on shell</li>
+                            <li>Soft spots</li>
+                            <li>Foul odor</li>
+                            <li>Bleeding</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Treatment depends on severity, ranging from topical treatments for mild cases to surgical debridement and systemic antibiotics for severe osteomyelitis. Proper husbandry is crucial for prevention.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 6: Gastrointestinal Parasites -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Gastrointestinal Parasites <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Turtle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/OIP.d4GuQCKEGmGQ0srIAvdHTwHaFC?rs=1&pid=ImgDetMain');" alt="Turtle with parasites"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Roundworms and protozoa are common in pet turtles. Many infections don't cause clinical signs but can lead to serious problems in severe cases or immunocompromised turtles.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Diarrhea</li>
+                            <li>Weight loss</li>
+                            <li>Lethargy</li>
+                            <li>Poor appetite</li>
+                            <li>Visible worms in feces</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Diagnosed through fecal examination. Treatment depends on parasite type but may include dewormers or antiprotozoal medications. Severe cases may require supportive care like fluids and nutritional support.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 7: Intestinal Obstruction -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Intestinal Obstruction <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Turtle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://europepmc.org/articles/PMC1539397/bin/canvetj00152-0057-a.jpg');" alt="Turtle with obstruction"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Occurs when there's a blockage in the digestive system, most often from eating gravel at the bottom of their tank. The behavior may be natural for digestion, mineral acquisition, or due to boredom/hunger.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Anorexia</li>
+                            <li>Lack of defecation</li>
+                            <li>Difficulty swimming</li>
+                            <li>Lethargy</li>
+                            <li>Abdominal distension</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Diagnosed through X-rays. Treatment depends on obstruction location and size - may include inducing vomiting or surgical removal. Prevention involves using appropriate substrate and providing proper nutrition.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 8: Shell Fracture -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Shell Fracture <span class="severity severity-high">Critical</span></div>
+                    <div class="pet-type">Turtle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/OIP._n8CfIjOZi6H96xH4eGNcwHaFd?rs=1&pid=ImgDetMain');" alt="Turtle with shell fracture"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>A very serious condition resulting from blunt force trauma that cracks the shell or causes pieces to come off. The shell protects internal organs, so fractures can be life-threatening.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Cracked or missing shell pieces</li>
+                            <li>Visible injury</li>
+                            <li>Pain response</li>
+                            <li>Bleeding</li>
+                            <li>Lethargy</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Requires immediate veterinary care. X-rays determine severity. Treatment may involve medical-grade plastics or epoxy cement to repair shell. Severe cases may need surgical intervention. Proper aftercare is crucial for recovery.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 9: Cystic Calculi -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Cystic Calculi <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Turtle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/OIP.HvVuwa5nMUCC6BUWOH3kHAHaJM?rs=1&pid=ImgDetMain');" alt="Turtle with bladder stones"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Bladder stones occur when minerals from the diet form crystals in urine that stick together. Usually results from improper nutrition and/or dehydration. The turtle's shell makes surgical treatment challenging.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Blood in droppings</li>
+                            <li>Straining to defecate</li>
+                            <li>Grunting during bowel movements</li>
+                            <li>Lethargy</li>
+                            <li>Loss of appetite</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Diagnosed through physical exam and X-rays. Stone removal generally requires surgery (either through shell or pelvic approach) plus fluid therapy. Dietary and environmental modifications help prevent recurrence.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 10: Tissue Prolapses -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Tissue Prolapses <span class="severity severity-high">Critical</span></div>
+                    <div class="pet-type">Turtle</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.veterinary-practice.com/wp-content/uploads/2022/10/2210_AH-Fig4-2-720x991.jpg');" alt="Turtle with prolapse"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Occurs when an organ (intestine, cloaca, bladder, uterus, or penis) protrudes from the vent. In males, temporary penis prolapse during stress or mating is normal if it retracts easily. Prolapsed tissue is life-threatening if not treated.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Visible tissue protruding from vent</li>
+                            <li>Swelling</li>
+                            <li>Straining</li>
+                            <li>Lethargy</li>
+                            <li>Bleeding</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Requires immediate veterinary attention. Exposed tissue can dry out, suffer blood flow compromise, or be bitten by tank mates. Treatment may involve reduction, lubrication, sutures, or surgery depending on severity and tissue involved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

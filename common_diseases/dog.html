@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Skin Disease Encyclopedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-image: url('https://cdn5.vectorstock.com/i/1000x1000/76/84/blue-pet-or-animal-footprint-seamless-pattern-vector-3007684.jpg');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Centers the background image */
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(248, 249, 250, 0.8); /* Adds a slight background color for readability */
+            border-radius: 10px; /* Optional: rounds the corners of the container */
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            background-color: #4a6fa5;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .disease-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .disease-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .disease-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .disease-header {
+            background-color: #3a5a8f;
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .disease-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .pet-type {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .disease-content {
+            display: flex;
+            min-height: 300px;
+        }
+        
+        .disease-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .disease-image::after {
+            content: attr(alt);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        .disease-info {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+        
+        .disease-info h3 {
+            color: #4a6fa5;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .disease-info p {
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list li {
+            margin-bottom: 5px;
+        }
+        
+        .severity {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .severity-high {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .severity-medium {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .severity-low {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .disease-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .disease-content {
+                flex-direction: column;
+            }
+            
+            .disease-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dog Skin Disease Encyclopedia</h1>
+            <p class="subtitle">Comprehensive guide to common canine skin conditions and treatments</p>
+        </header>
+        
+        <div class="disease-container">
+            <!-- Disease 1 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Acral Lick Dermatitis <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Dog</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thesprucepets.com/thmb/fFyH0vHcOaQnnxel15hBZVIkLqI=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/dog-animal-skin-disease-1208313049-6c58143883d2477a920ca1ed1a7bc1e6.jpg');" alt="Dog with lick granuloma"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>A skin condition caused by compulsive licking or chewing of the same area, typically on paws or limbs. Also called lick granulomas, these lesions resist healing and may become infected.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Persistent licking/chewing of specific areas</li>
+                            <li>Raised, thickened skin lesions</li>
+                            <li>Possible infection and scarring</li>
+                            <li>Compulsive behavior pattern</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Identify and treat underlying cause, use anti-pruritics and antibiotics if infected. E-collar to prevent licking. Behavior modification for compulsive cases.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 2 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Acute Moist Dermatitis <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Dog</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thesprucepets.com/thmb/NVisTz8zkALI-d9xon5TXINZgWw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/moist-eczema-on-dogs-shoulder--aka-hot-spot-481589958-280e5b81e0fe4b6d86c4e23996d21cf9.jpg');" alt="Dog with hot spot"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Commonly called "hot spots," these are red, raw areas that develop suddenly from excessive licking/chewing. Often caused by underlying allergies or parasites.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Sudden appearance of red, moist lesions</li>
+                            <li>Hair loss in affected area</li>
+                            <li>Possible bacterial infection</li>
+                            <li>Intense itching and discomfort</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Shave hair around area, clean thoroughly. Use topical medications, antibiotics if infected. E-collar to prevent further trauma. Treat underlying cause.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 3 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Canine Atopic Dermatitis <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Dog</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thesprucepets.com/thmb/s-S0GF9WquOqpNJZOSsC5p8lNdE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/dog-belly-is-full-of-red-rash-1176710920-70f90b05ec40470f9bc082d9bd46ffbb.jpg');" alt="Dog with allergic skin condition"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Inherited hypersensitivity reaction causing extreme itching. Often no specific allergen identified. Typically appears between 6 months and 3 years of age.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Intense itching (scratching, chewing, rubbing)</li>
+                            <li>Hair loss and skin irritation</li>
+                            <li>Secondary skin infections</li>
+                            <li>Worsened by fleas/parasites</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Anti-pruritics, antihistamines, steroids. Allergy testing may lead to immunotherapy. Often requires lifelong management of flare-ups.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 4 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Ear Infections <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Dog</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thesprucepets.com/thmb/UaYwIRMJYIDciNzp1rCPLySvtr4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/macro-of-infected-dog-ear-857176158-f964a6a8ad7c4d86bc5a3534555a6a17.jpg');" alt="Dog with ear infection"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Caused by yeast or bacteria infecting the ear canal. May occur alone or with other skin conditions like allergies or ear mites.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Red, itchy, swollen ear canal</li>
+                            <li>Discharge and odor</li>
+                            <li>Head shaking or tilting</li>
+                            <li>Pain when touched</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Ear cleaning and topical medications. Oral/injectable meds for severe cases. Chronic cases may cause permanent damage.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 5 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Fleas <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Dog</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thesprucepets.com/thmb/7ulGo6Kf7osLQ1Ey95ONOjNF9jY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-852110036-60ed5f7111a84555badbf927031723c9.jpg');" alt="Dog with flea infestation"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Common external parasites causing intense itching. Some dogs develop Flea Allergy Dermatitis (hypersensitivity to flea saliva).</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Intense scratching and chewing</li>
+                            <li>Flea dirt (black specks) on skin</li>
+                            <li>Hair loss and skin irritation</li>
+                            <li>Possible anemia in severe cases</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Use veterinarian-recommended flea control products. Treat environment. Severe cases may need additional medications.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 6 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Folliculitis <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Dog</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thesprucepets.com/thmb/UbzVxzaVjDVqzx8M9a_jRa2q9iQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/red-rashes-on-the-skin-of-the-belly-of-the-dog-1159787843-6987ac6844c64862a76145fcc230c635.jpg');" alt="Dog with folliculitis"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Inflammation of hair follicles, most commonly caused by bacterial infection (Staphylococcus). May occur alone or with other skin problems.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Bumps around hair follicles</li>
+                            <li>Circular areas of crusting</li>
+                            <li>Itching or pain</li>
+                            <li>Possible secondary infections</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Depends on cause - may include antibiotics, antifungals, or antipruritics. Medicated shampoos often helpful.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 7 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Food Allergies <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Dog</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thesprucepets.com/thmb/76FzkUymQVZz7ItYRk9d1Prrx3g=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/black-puppy-cleaning-his-paw-after-a-long-hike-1311291268-318e8b158f774c21a8a78d6ab201affc.jpg');" alt="Dog with food allergies"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Allergic reaction to specific food ingredients (commonly beef, dairy, wheat, chicken, egg, or soy). Causes skin and sometimes GI symptoms.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Itching, redness, flakiness</li>
+                            <li>Hair loss</li>
+                            <li>Chronic ear infections</li>
+                            <li>Possible vomiting/diarrhea</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>8-12 week elimination diet trial with prescription food. Antipruritics for symptom relief. Identify and avoid trigger ingredients.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 8 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Immune-Mediated Diseases <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Dog</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thesprucepets.com/thmb/V6nOMRhMPM4b9T9uNNfL-K20z0o=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/640px-Pemphigus_foliaceus_dog_1-b896fa5999994cc4bd1e309a1f3a5eac.jpeg');" alt="Dog with autoimmune condition"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Conditions where immune system attacks the body's own cells. Includes various forms of lupus, pemphigus, and other autoimmune disorders.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Varies by specific condition</li>
+                            <li>Skin lesions, ulcers, crusting</li>
+                            <li>Hair loss</li>
+                            <li>Systemic illness in some cases</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Immunosuppressive medications like steroids, cyclosporine, or Apoquel. Often requires specialist dermatologist care.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 9 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Pyoderma <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Dog</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thesprucepets.com/thmb/CWEzF0DzFitdVmJmIYTrtjM7ai0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/dog-body-with-red-irritated-skin-due-to-allergy-1195895496-0d4372aa19254217b8c9218a3125a8c7.jpg');" alt="Dog with bacterial skin infection"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Bacterial skin infection - can be superficial (upper layers) or deep (more serious). Often secondary to other skin conditions.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Pustules, redness, irritation</li>
+                            <li>Discharge and scabs (deep pyoderma)</li>
+                            <li>Painful skin lesions</li>
+                            <li>Possible systemic illness</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Antibiotics (often long-term), medicated baths, topical treatments. Address underlying causes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 10 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Seborrhea <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Dog</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thesprucepets.com/thmb/yk7TTNRi-ZOEmOQW95rjHko3n4Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/vet-examining-dog-body-skin-with-bad-yeast-fungal-infection-1128663205-ec524ed5da314cc8b332796e012453d8.jpg');" alt="Dog with seborrhea"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Skin disease causing defective keratinization, leading to excessive scaling. Can be primary (genetic) or secondary (caused by other conditions).</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Dry flakes and scales (seborrhea sicca)</li>
+                            <li>Greasy skin with oily scales (seborrhea oleosa)</li>
+                            <li>Possible odor</li>
+                            <li>Secondary infections</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Primary form is managed with medicated baths and topical treatments. Secondary form requires treating underlying condition.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 11 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Ticks <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Dog</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thesprucepets.com/thmb/q0pYWALcGZ9kygzpKvbKXhYoFvQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-180708143-c79034811d7641569c219f49de04194f.jpg');" alt="Dog with tick infestation"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>External parasites that attach to skin and feed on blood. Main concern is transmission of diseases like Lyme, Ehrlichia, and Rocky Mountain Spotted Fever.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Visible ticks attached to skin</li>
+                            <li>Local skin irritation</li>
+                            <li>Possible systemic illness from diseases</li>
+                            <li>Anemia in severe infestations</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Proper tick removal. Use veterinarian-recommended tick control products. Monitor for signs of tick-borne diseases.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

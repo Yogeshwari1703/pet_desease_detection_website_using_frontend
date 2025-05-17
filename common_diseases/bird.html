@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avian Disease Encyclopedia</title>
+    <!-- <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            background-color: #4a6fa5;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .disease-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .disease-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .disease-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .disease-header {
+            background-color: #3a5a8f;
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .disease-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .pet-type {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .disease-content {
+            display: flex;
+            min-height: 300px;
+        }
+        
+        .disease-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .disease-image::after {
+            content: attr(alt);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        .disease-info {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+        
+        .disease-info h3 {
+            color: #4a6fa5;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .disease-info p {
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list li {
+            margin-bottom: 5px;
+        }
+        
+        .severity {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .severity-high {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .severity-medium {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .severity-low {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .disease-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .disease-content {
+                flex-direction: column;
+            }
+            
+            .disease-image {
+                height: 200px;
+            }
+        }
+    </style> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-image: url('https://cdn5.vectorstock.com/i/1000x1000/76/84/blue-pet-or-animal-footprint-seamless-pattern-vector-3007684.jpg');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Centers the background image */
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(248, 249, 250, 0.8); /* Adds a slight background color for readability */
+            border-radius: 10px; /* Optional: rounds the corners of the container */
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            background-color: #4a6fa5;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .disease-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .disease-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .disease-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .disease-header {
+            background-color: #3a5a8f;
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .disease-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .pet-type {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .disease-content {
+            display: flex;
+            min-height: 300px;
+        }
+        
+        .disease-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .disease-image::after {
+            content: attr(alt);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        .disease-info {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+        
+        .disease-info h3 {
+            color: #4a6fa5;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .disease-info p {
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list li {
+            margin-bottom: 5px;
+        }
+        
+        .severity {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .severity-high {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .severity-medium {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .severity-low {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .disease-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .disease-content {
+                flex-direction: column;
+            }
+            
+            .disease-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Birds Disease Encyclopedia</h1>
+            <p class="subtitle">Comprehensive guide to common bird illnesses and treatments</p>
+        </header>
+        
+        <div class="disease-container">
+            <!-- Disease 1 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Psittacosis (Parrot Fever) <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Birds</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/03/Psittacosis-or-Parrot-Fever.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Bird with psittacosis"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Zoonotic disease caused by Chlamydophila bacteria affecting over 400 bird species. Also called Parrot Fever, it can infect humans and other animals.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Swollen, puffy eyes</li>
+                            <li>Anorexia and lethargy</li>
+                            <li>Weight loss</li>
+                            <li>Respiratory distress</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Doxycycline is the antibiotic of choice. Improve hygiene, disinfect habitats, and isolate infected birds. Avoid contact with wild birds.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 2 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Proventricular Dilatation Disease (PDD) <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Birds</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/03/Proventicular-Dilatation-Disease-in-Birds.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Bird with PDD"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Caused by Avian Bornavirus affecting nerves to the gastrointestinal tract, especially the proventriculus. Common in parrots, macaws, and African greys.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Ataxia and depression</li>
+                            <li>Weakness</li>
+                            <li>Lack of appetite</li>
+                            <li>Weight loss</li>
+                            <li>Undigested food in droppings</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>No specific treatment available. Supportive care with anti-inflammatory drugs. Isolate affected birds from healthy ones.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 3 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Polyomavirus <span class="severity severity-high">Critical</span></div>
+                    <div class="pet-type">Birds</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/03/Polyomaviruses-in-Birds.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Bird with polyomavirus"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Fatal disease primarily affecting young parrots. Adults often develop immunity. Spread through direct contact with infected birds.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Loss of appetite</li>
+                            <li>Diarrhea and vomiting</li>
+                            <li>Feather abnormalities</li>
+                            <li>Difficulty breathing</li>
+                            <li>Hemorrhage under skin</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>No specific treatment. Prevention through strict hygiene, disinfection, and vaccination. Often fatal in young birds.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 4 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Psittacine Beak and Feather Disease (PBFD) <span class="severity severity-high">Critical</span></div>
+                    <div class="pet-type">Birds</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/03/Psittasine-Beak-and-Feather-Disease.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Bird with PBFD"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Contagious viral disease caused by circovirus affecting beak, feathers, and immune system. Affects over 40 bird species.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Depression and regurgitation</li>
+                            <li>Abnormal feather development</li>
+                            <li>Fragile, deformed feathers</li>
+                            <li>Irregular beak growth</li>
+                            <li>Mucus discharge</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>No cure. Supportive care includes nutritional support, beak trimming, and treating secondary infections. Quarantine new birds. Vaccine available in Australia.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 5 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Candidiasis <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Birds</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/03/Candidiasis-in-Birds.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Bird with candidiasis"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Fungal infection caused by Candida albicans, normally present but overgrows due to antibiotics, poor sanitation, or vitamin A deficiency.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Fluffed feathers</li>
+                            <li>Lack of appetite</li>
+                            <li>Vomiting and regurgitation</li>
+                            <li>Crop impaction</li>
+                            <li>White plaques in mouth</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Antifungal medications (nystatin, ketoconazole, etc.). Improve hygiene, balanced diet, and avoid unnecessary antibiotics. Amphotericin B for skin/oral infections.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 6 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Respiratory Tract Infection (RTI) <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Birds</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/03/RTI-in-Birds-696x464.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Bird with respiratory infection"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Common condition affecting lungs, sinuses, and eyes. Caused by bacteria (Psittacosis, Mycoplasma), viruses (Avian Influenza), fungi (Aspergillosis), or parasites.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Sneezing and coughing</li>
+                            <li>Difficulty breathing</li>
+                            <li>Nasal discharge</li>
+                            <li>Dehydration</li>
+                            <li>Lethargy</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Depends on cause (antibiotics, antifungals, etc.). Early diagnosis crucial. Vaccines available for some pathogens. Improve nutrition and habitat conditions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 7 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Feather Plucking <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Birds</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/03/Feather-Plucking-696x487.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Bird with feather plucking"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Behavioral or medical condition where birds pluck their own feathers. Causes include infections, parasites, stress, loneliness, or nutritional deficiencies.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Bald patches</li>
+                            <li>Damaged feathers</li>
+                            <li>Skin irritation</li>
+                            <li>Behavioral changes</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Address underlying causes. Reduce stress, provide companionship, balanced diet, and adequate space. Medical treatment if infection or parasites present.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 8 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Common Eye Problems <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Birds</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/03/Bird-Diseases-Common-Eye-Problems-696x730.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Bird with eye problem"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Includes conjunctivitis, uveitis, cataracts, and conditions from infections (bacterial, viral, fungal) or nutritional deficiencies (especially vitamin A).</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Redness and swelling</li>
+                            <li>Excessive tearing</li>
+                            <li>Discharge or crusting</li>
+                            <li>Vision problems</li>
+                            <li>Rubbing eyes</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Antibiotic eye drops (e.g., Chloramphenicol). Identify and treat underlying cause. Vaccination available for some viral causes like Fowl Pox.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 9 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Avian Influenza (Bird Flu) <span class="severity severity-critical">Critical</span></div>
+                    <div class="pet-type">Birds</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/03/Avian-Influenza-696x426.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Bird with avian influenza"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Highly contagious viral disease (H5N1 strain is zoonotic). Causes severe respiratory symptoms and high mortality in birds. Can infect humans.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Respiratory distress</li>
+                            <li>Reduced egg production</li>
+                            <li>Swelling of head/face</li>
+                            <li>Sudden death</li>
+                            <li>Neurological signs</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>No effective treatment. Prevention through vaccination and strict biosecurity. Isolate and report suspected cases immediately.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 10 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Gout <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Birds</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.thevetexpert.com/wp-content/uploads/2020/03/Gout-in-Birds-696x522.jpg?ezimgfmt=ng:webp/ngcb4');" alt="Bird with gout"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Result of kidney dysfunction causing uric acid buildup. Two types: visceral (organs) and articular (joints). Caused by diet, renal failure, or toxins.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Swollen joints (articular)</li>
+                            <li>Lethargy</li>
+                            <li>Loss of appetite</li>
+                            <li>Difficulty moving</li>
+                            <li>White chalky deposits</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Address underlying kidney issues. Dietary changes (reduce protein), increase hydration. Pain management. Often indicates serious renal disease.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

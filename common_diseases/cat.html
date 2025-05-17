@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feline Disease Encyclopedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #4a6fa580;
+           background-image: url('https://cdn5.vectorstock.com/i/1000x1000/76/84/blue-pet-or-animal-footprint-seamless-pattern-vector-3007684.jpg');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Centers the background image */
+            color: #333;
+            line-height: 1.6;
+            background-color: #4a6fa580;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(248, 249, 250, 0.8); /* Adds a slight background color for readability */
+            border-radius: 10px; /* Optional: rounds the corners of the container */
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            background-color: #4a6fa5;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .disease-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .disease-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .disease-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .disease-header {
+            background-color: #3a5a8f;
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .disease-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .pet-type {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .disease-content {
+            display: flex;
+            min-height: 300px;
+        }
+        
+        .disease-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .disease-image::after {
+            content: attr(alt);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        .disease-info {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+        
+        .disease-info h3 {
+            color: #4a6fa5;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .disease-info p {
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list li {
+            margin-bottom: 5px;
+        }
+        
+        .severity {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .severity-high {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .severity-medium {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .severity-low {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .disease-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .disease-content {
+                flex-direction: column;
+            }
+            
+            .disease-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cat Disease Encyclopedia</h1>
+            <p class="subtitle">Comprehensive guide to common cat illnesses and treatments</p>
+        </header>
+        
+        <div class="disease-container">
+            <!-- Disease 1 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Kidney Disease <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Cat</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.abvc.ae/wp-content/uploads/2016/02/cat-with-Renal-Failure.jpg');" alt="Cat with kidney disease"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Kidneys filter waste and regulate blood/water levels. Cats can develop acute renal failure (potentially reversible) or chronic kidney disease (manageable but not curable). Causes include age, infections, trauma, blockages, or poisoning.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Frequent urination</li>
+                            <li>Weight loss</li>
+                            <li>Excessive thirst</li>
+                            <li>Dry coat</li>
+                            <li>Vomiting and diarrhea</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Diagnosis requires bloodwork and urinalysis. Acute cases may be reversible with prompt treatment. Chronic cases require lifelong management with special diet and medications.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 2 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Dental Disease <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Cat</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/OIP.t3USIWy9w502hGjrU9ueigHaFQ?rs=1&pid=ImgDetMain');" alt="Cat with dental issues"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>50-90% of cats over 4 years suffer from dental disease. Main types are gingivitis, periodontitis, and tooth resorption. Can cause severe pain affecting eating and leading to malnutrition.</p>
+                        
+                        <h3>Types & Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li><strong>Gingivitis:</strong> Red, swollen, bleeding gums</li>
+                            <li><strong>Periodontitis:</strong> Gum damage, halitosis, drooling</li>
+                            <li><strong>Tooth Resorption:</strong> Pain, head tilting while eating</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Professional dental cleaning, possible extractions. Daily tooth brushing helps prevent recurrence. Special diets may help maintain oral health.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 3 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Diabetes <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Cat</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/OIP.-zMr7TOEkPwlzvfbgUgXKgAAAA?rs=1&pid=ImgDetMain');" alt="Cat with diabetes"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Caused by inability to produce or respond to insulin. Can result from genetics, pancreatic disease, or obesity. Serious but manageable, with some cats achieving remission.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Weight loss</li>
+                            <li>Increased thirst/urination</li>
+                            <li>Lethargy</li>
+                            <li>Dehydration</li>
+                            <li>Appetite changes</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Insulin therapy, dietary management, weight control. Regular monitoring of blood glucose levels. Some cats may go into remission with proper treatment.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 4 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Feline Immunodeficiency Virus (FIV) <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Cat</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/OIP.bz4ItSKCV3dxW458zoURaAHaE7?rs=1&pid=ImgDetMain');" alt="Cat with FIV"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Compromises immune system, leaving cats vulnerable to infections. Spread mainly through bite wounds (outdoor male cats at highest risk). No cure but can be managed.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Gingivitis</li>
+                            <li>Loss of appetite</li>
+                            <li>Poor coat condition</li>
+                            <li>Fever</li>
+                            <li>Chronic/recurring infections</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Diagnosed through bloodwork. Management focuses on preventing secondary infections. Indoor lifestyle recommended. Can live normal lifespan with proper care.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 5 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Feline Leukemia Virus (FeLV) <span class="severity severity-high">Critical</span></div>
+                    <div class="pet-type">Cat</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX-Fs2iW9p5_9Q1F0sPspkhwGknxxMpxIScA&s');" alt="Cat with FeLV"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Cancer-causing retrovirus spread through saliva, blood, feces, or urine. Weakens immune system and causes severe anemia. Kittens often infected by mothers.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Seizures/neurological disorders</li>
+                            <li>Eye conditions</li>
+                            <li>Persistent diarrhea</li>
+                            <li>Persistent fever</li>
+                            <li>Recurrent infections</li>
+                            <li>Weight loss and anorexia</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>No cure exists. Prevention through vaccination is key. Infected cats need careful management to prevent disease progression and secondary infections.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 6 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Cancer <span class="severity severity-high">Critical</span></div>
+                    <div class="pet-type">Cat</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://geniusvets.s3.amazonaws.com/gv-blog/2024/cat-cancer-ServiceTop.jpg');" alt="Cat with cancer"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Lymphoma is most common, but many forms exist. FIV/FeLV positive cats at higher risk. Siamese breeds more susceptible. Early detection improves outcomes.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Weight loss</li>
+                            <li>Anorexia</li>
+                            <li>Diarrhea</li>
+                            <li>Vomiting</li>
+                            <li>Visible lumps (sometimes)</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Depends on cancer type and stage. May include surgery, chemotherapy, or radiation. Regular vet exams crucial for early detection.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 7 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Obesity <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Cat</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://cdn.prod.website-files.com/62c80f48b026f03e8223b92d/63d8aa7d8d7f888078c28d93_Obesity-Cats-Reduced-Mobility.webp');" alt="Overweight cat"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Defined as 20% over ideal weight. Shortens lifespan and increases risk of diabetes, joint problems, cancer, and heart disease.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Excess body fat</li>
+                            <li>Difficulty grooming</li>
+                            <li>Lethargy</li>
+                            <li>Labored breathing</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Veterinary-supervised weight loss plan. Gradual dietary changes and increased exercise. Avoid crash diets which can be dangerous.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 8 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Pancreatitis <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Cat</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB6bsqCPUyoTRW99LDu_nMV-OtpsYJ7IVDIyfuozR1rG08Q4RFgBgUSHiJa8l6EwfMVB0&usqp=CAU');" alt="Cat with pancreatitis"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Inflammation of pancreas, often with liver/intestinal involvement. Cause unknown but cats with diabetes or IBD at higher risk.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Vomiting</li>
+                            <li>Fever</li>
+                            <li>Abdominal pain</li>
+                            <li>Decreased appetite</li>
+                            <li>Diarrhea</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Hospitalization often needed for IV fluids and medications. Pain management crucial. Long-term dietary changes may be recommended.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 9 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Hyperthyroidism <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Cat</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.aorangivet.co.nz/wp-content/uploads/aa-ty4.jpg');" alt="Cat with hyperthyroidism"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Endocrine disease in middle-aged/older cats caused by benign thyroid growths increasing hormone production.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Excessive energy</li>
+                            <li>Increased appetite</li>
+                            <li>Weight loss</li>
+                            <li>Restlessness</li>
+                            <li>Increased thirst/urination</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Diagnosed through blood tests. Options include medication, radioactive iodine therapy, surgery, or special diet. Treatment can restore normal thyroid function.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 10 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Broken Bones <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Cat</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://d2zp5xs5cp8zlg.cloudfront.net/image-45256-800.jpg');" alt="Cat with injury"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Occurs when excessive stress/pressure is applied to bone. Requires immediate veterinary attention to minimize long-term effects.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Limping or inability to use limb</li>
+                            <li>Swelling at injury site</li>
+                            <li>Pain when touched</li>
+                            <li>Visible deformity (in severe cases)</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>X-rays for diagnosis. May require splinting, casting, or surgery. Pain management and restricted activity during healing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

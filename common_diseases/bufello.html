@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffalo Disease Encyclopedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-image: url('https://cdn5.vectorstock.com/i/1000x1000/76/84/blue-pet-or-animal-footprint-seamless-pattern-vector-3007684.jpg');
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Centers the background image */
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(248, 249, 250, 0.8); /* Adds a slight background color for readability */
+            border-radius: 10px; /* Optional: rounds the corners of the container */
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            background-color: #4a6fa5;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .disease-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .disease-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .disease-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .disease-header {
+            background-color: #3a5a8f;
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .disease-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .pet-type {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .disease-content {
+            display: flex;
+            min-height: 300px;
+        }
+        
+        .disease-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .disease-image::after {
+            content: attr(alt);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        .disease-info {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+        
+        .disease-info h3 {
+            color: #4a6fa5;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .disease-info p {
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .symptoms-list li {
+            margin-bottom: 5px;
+        }
+        
+        .severity {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .severity-high {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .severity-medium {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .severity-low {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .disease-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .disease-content {
+                flex-direction: column;
+            }
+            
+            .disease-image {
+                height: 200px;
+            }
+        }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Buffalo Disease Encyclopedia</h1>
+            <p class="subtitle">Comprehensive guide to common buffalo illnesses and treatments</p>
+        </header>
+        
+        <div class="disease-container">
+            <!-- Disease 1 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Foot-and-Mouth Disease <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Buffalo</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://healthviewsonline.com/wp-content/uploads/2022/08/buffaloes-gb601a1f0e_640-1.jpg');" alt="Buffalo with foot-and-mouth disease"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>A severe and highly contagious infection caused by the Aphto-virus (Picornaviridae family) that affects cloven-hoofed animals. Spreads through aerosol transmission, direct contact, and contaminated objects.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Painful vesicles on lips, tongue, gums, nostrils, and feet</li>
+                            <li>Excessive salivation and depression</li>
+                            <li>Anorexia and lameness</li>
+                            <li>Fever and decreased milk production</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Control strategies include vaccination and zoosanitary measures. Eradication policies aim to eliminate virus presence, while management focuses on reducing disease effects.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 2 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Rotavirus Infection <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Buffalo Calves</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://healthviewsonline.com/wp-content/uploads/2022/08/water-buffaloes-g949270343_640-1.jpg');" alt="Buffalo calf with diarrhea"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Caused by Rotaviruses (Reoviridae family) with high environmental resistance. Primarily affects calves 1-3 weeks old through oral-fecal contamination.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Rapid onset of anorexia and depression</li>
+                            <li>Fever and severe dehydration</li>
+                            <li>Watery or pasty diarrhea (sometimes with blood)</li>
+                            <li>Worst diarrhea after 7-8 days</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>House calves in disinfected cages for 15-20 days. High-quality colostrum is crucial. Vaccinate pregnant females for passive immunization of calves.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 3 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Bovine Brucellosis <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Buffalo</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://healthviewsonline.com/wp-content/uploads/2022/08/water-buffaloes-g18f74b5b0_640-1.jpg');" alt="Buffalo with reproductive issues"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Also known as Bang's disease or contagious abortion. Primarily a reproductive disease caused by Brucella abortus that affects pregnant females.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Abortion after six months of pregnancy</li>
+                            <li>Retained placenta and catarrhal metritis</li>
+                            <li>Synovitis and joint swelling</li>
+                            <li>Impaired fertility</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Requires prolonged, aggressive treatment with risks of relapse. Control measures focus on preventing spread to humans through the food chain.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 4 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Mastitis <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Buffalo</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://th.bing.com/th/id/OIP.k-QIGAJtu8nMa9d2UW9FdwHaEK?rs=1&pid=ImgDetMain');" alt="Buffalo with udder inflammation"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Economically significant udder inflammation caused by bacteria (Staphylococcus, E. coli), fungi, or Mycoplasma. Spread through poor hygiene, milking practices, or flies.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Swollen, hot, painful udder</li>
+                            <li>Milk changes (color, consistency)</li>
+                            <li>Blood or clots in milk</li>
+                            <li>Reduced milk yield</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>Maintain hygiene, isolate infected animals, apply ice packs, milk out infected milk, and use antibiotics. Control flies and disinfect equipment.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 5 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Tuberculosis <span class="severity severity-high">Severe</span></div>
+                    <div class="pet-type">Buffalo</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://www.researchgate.net/profile/Jenevaldo-Silva-2/publication/275520996/figure/fig2/AS:294477815140353@1447220390230/Tuberculosis-in-a-buffalo-lymph-node-Granulomatous-inflammation-with-epithelioid-cells.png');" alt="Buffalo with tuberculosis"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Chronic disease caused by Mycobacterium bovis, lasting months to years. Spread through exhaled air, secretions, and excretions from infected animals.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Low-grade fever and appetite loss</li>
+                            <li>Emaciation and weakness</li>
+                            <li>Chronic cough and pneumonia</li>
+                            <li>Swollen lymph nodes (especially supramammary)</li>
+                            <li>Dry skin and difficulty breathing</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>No standard treatment due to expense and duration. Limited therapeutic protocols for high-value animals only.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disease 6 -->
+            <div class="disease-card">
+                <div class="disease-header">
+                    <div class="disease-name">Blue Tongue <span class="severity severity-medium">Moderate</span></div>
+                    <div class="pet-type">Buffalo</div>
+                </div>
+                <div class="disease-content">
+                    <div class="disease-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaARlo9lSvwZ8reD4Mei09aFKhEBP2Kn0XX2CHk4dy8JZNOS6aG8DhZUFhqs4z9B5_ZYM&usqp=CAU');" alt="Buffalo with blue tongue"></div>
+                    <div class="disease-info">
+                        <h3>Overview</h3>
+                        <p>Vector-borne disease caused by Reoviridae virus affecting ruminants. Spread through blood and rarely through contaminated sperm.</p>
+                        
+                        <h3>Symptoms</h3>
+                        <ul class="symptoms-list">
+                            <li>Fever (up to 42°C)</li>
+                            <li>Mucous membrane inflammation and ulcers</li>
+                            <li>Purplish-blue tongue (in some cases)</li>
+                            <li>Lameness from coronary band hemorrhages</li>
+                            <li>Emaciation and loss of condition</li>
+                        </ul>
+                        
+                        <h3>Treatment</h3>
+                        <p>No efficient treatment available. Prevention focuses on vector control and biosecurity measures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
