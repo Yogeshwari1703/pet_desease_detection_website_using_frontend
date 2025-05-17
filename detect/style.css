@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+body {
+  background-image: url('https://img.freepik.com/premium-photo/large-group-cats-dogs-looking-camera-blue-background_191971-28557.jpg?w=2000');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  line-height: 2.5;
+  padding: 20px;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  /* background: (to bottom right, rgba(224, 242, 254, 0.3), rgba(96, 165, 250, 0.3), rgba(59, 130, 246, 0.3)); */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 3px solid #3a5a8f;
+}
+h1 {
+  color: #3a5a8f;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  display: inline;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #3a5a8f;
+  background-color: white;
+}
+select, input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+}
+.btn {
+  background-color: #4a6fa5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: #3a5a8f;
+}
+.symptom-selector {
+  margin: 20px 0;
+}
+#symptoms-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 15px 0;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+.symptom-checkbox {
+  display: flex;
+  align-items: center;
+}
+.symptom-checkbox input {
+  width: auto;
+  margin-right: 8px;
+}
+.result-container {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #4a6fa5;
+}
+.disease-item {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #e8f4fc;
+  border-radius: 5px;
+}
+.disease-name {
+  font-weight: bold;
+  color: #4a6fa5;
+  margin-bottom: 5px;
+}
+.match-score {
+  display: inline-block;
+  background: #4a6fa5;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.emergency {
+  background-color: #fde8e8;
+  border-left: 4px solid #e74c3c;
+}
+.emergency .disease-name {
+  color: #e74c3c;
+}
+.loading {
+  display: none;
+  text-align: center;
+  margin: 20px 0;
+}
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4a6fa5;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.severity-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.severity-minor {
+  background-color: #2ecc71;
+}
+.severity-moderate {
+  background-color: #f39c12;
+}
+.severity-severe {
+  background-color: #e74c3c;
+}
+.age-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.age-input {
+  display: flex;
+  align-items: center;
+}
+.age-input input {
+  flex: 1;
+  margin-right: 10px;
+}
+.age-input select {
+  width: auto;
+}
+.search-symptoms {
+  margin-bottom: 10px;
+}
+#symptom-search {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.form-group p {
+  background-color: #ddd;
+  display: inline;
+}

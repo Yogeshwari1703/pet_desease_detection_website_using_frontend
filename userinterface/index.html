@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JivRaksha - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXw4KD0P1J8Y7JbO1xT3RhK0Zpz1CZ0qN9DBmB1kVuS6C+vGmEkUMJ3i2jk5O7rCyz1kW+5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="profile-container" onclick="openSidebar()">
+      <img src="https://cdn-icons-png.flaticon.com/512/194/194938.png" class="profile-pic" alt="Profile" />
+      <!-- <span class="welcome-text">Welcome, Anushka</span> -->
+      <span class="welcome-text" id="welcomeUser">Welcome 😊</span>
+
+    </div>
+    <div class="navbar-logo">JivRaksha</div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-content">
+      <div class="sidebar-header">
+        <img src="https://cdn-icons-png.flaticon.com/512/194/194938.png" alt="Profile">
+        <h3>Welcome 😊</h3>
+      </div>
+      
+      <a href="../care/index.html"><i class="fas fa-paw"></i> Animal Care</a>
+      <a href="../detect/index.html"><i class="fas fa-stethoscope"></i> Disease Detection</a>
+      <a href="../suggestion/index.html"><i class="fas fa-lightbulb"></i> Suggestion Board</a>
+      <a href="#"><i class="fas fa-phone"></i> Contact Us</a>
+      <a href="#" style="color: red;"><i class="fas fa-sign-out-alt "></i> Log Out</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>🐮 Welcome to JivRaksha</h1>
+    <p>Empowering Rural Pet Healthcare and Compassion</p>
+    <button onclick="location.href='#animals'">Explore Animals Diseses</button>
+  </div>
+
+  <section class="animals-section" id="animals">
+   
+    <div class="animal-card" onclick="location.href='../common_diseases/dog/index.html'">
+      <img src="https://images.pexels.com/photos/1189673/pexels-photo-1189673.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dog" />
+      <p>Dog</p>
+    </div>
+    <div class="animal-card" onclick="location.href='../common_diseases/cat/index.html'">
+      <img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Cat" />
+      <p>Cat</p>
+    </div>
+    <div class="animal-card" onclick="location.href='../common_diseases/bird/index.html'">
+      <img src="https://images.pexels.com/photos/326900/pexels-photo-326900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Birds" />
+      <p>Birds</p>
+    </div>
+    <div class="animal-card" onclick="location.href='../common_diseases/rabbit/index.html'">
+      <img src="https://images.pexels.com/photos/21198651/pexels-photo-21198651/free-photo-of-head-of-white-rabbit.jpeg" alt="Rabbit" />
+      <p>Rabbit</p>
+    </div>
+    <div class="animal-card" onclick="location.href='../common_diseases/cow/index.html'">
+      <img src="https://images.pexels.com/photos/2581435/pexels-photo-2581435.jpeg" alt="Cow" />
+      <p>Cow</p>
+    </div>
+    <div class="animal-card" onclick="location.href='../common_diseases/fish/index.html'">
+      <img src="http://cdn.sheknows.com/articles/2014/05/Mike_C/ChefMom/Goldfish2.jpg" alt="Fish" />
+      <p>Fish</p>
+    </div>
+    <div class="animal-card" onclick="location.href='../common_diseases/turtle/index.html'">
+      <img src="https://images.pexels.com/photos/8647945/pexels-photo-8647945.jpeg" alt="Turtle" />
+      <p>Turtle</p>
+    </div>
+    <div class="animal-card" onclick="location.href='../common_diseases/bufello/index.html'">
+      <img src="https://th.bing.com/th/id/OIP.BqUFJrEog58INlBtCFTjTQAAAA?rs=1&pid=ImgDetMain" alt="Bufelllo" />
+      <p>Bufello</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 JivRaksha. All rights reserved.
+  </footer>
+
+  <script src="script.js">  </script>
+
+</body>
+</html>

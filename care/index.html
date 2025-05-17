@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetCare Pro - Animal Care & Disease Prevention</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-paw"></i> JivRaksha</h1>
+    <p class="subtitle">Animal Care Guide & Disease Prevention</p>
+  </header>
+
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search animals (e.g., 'dog', 'cow')..." autocomplete="off">
+  </div>
+
+  <div class="animal-grid" id="animalGrid">
+    <!-- Animals loaded via JavaScript -->
+  </div>
+
+  <!-- Care Tips Modal -->
+  <div class="modal" id="careModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Dog Care Guide</h2>
+        <p class="modal-subtitle" id="modalSubtitle">Canine</p>
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <h3 class="section-title"><i class="fas fa-heart"></i> Essential Care Tips</h3>
+        <div id="modalTips"></div>
+
+        <h3 class="section-title"><i class="fas fa-bug"></i> Common Diseases</h3>
+        <ul class="disease-list" id="diseaseList"></ul>
+
+        <h3 class="section-title"><i class="fas fa-syringe"></i> Vaccination Schedule</h3>
+        <div id="vaccinationInfo"></div>
+
+        <div class="emergency-contacts">
+          <h3 class="section-title"><i class="fas fa-phone-alt"></i> Emergency Contacts</h3>
+          <div id="emergencyContacts"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

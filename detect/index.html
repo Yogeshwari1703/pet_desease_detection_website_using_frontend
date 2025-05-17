@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Pet Disease Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Comprehensive Pet Disease Prediction</h1>
+        
+        <div class="pet-form">
+            <div class="form-group">
+                <label for="pet-type">Pet Type</label>
+                <select id="pet-type">
+                    <option value="">Select your pet</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="cow">Cow</option>
+                    <option value="buffalo">Buffalo</option>
+                    <option value="fish">Fish</option>
+                    <option value="turtle">Turtle</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pet-breed">Breed</label>
+                <select id="pet-breed" disabled>
+                    <option value="">Please select pet type first</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pet-name">Pet's Name (Optional)</label>
+                <input type="text" id="pet-name" placeholder="Enter your pet's name">
+            </div>
+
+            <div class="form-group">
+                <label>Pet's Age</label>
+                <div class="age-group">
+                    <div class="age-input">
+                        <input type="number" id="pet-age" min="0" max="50" placeholder="Age">
+                        <select id="age-unit">
+                            <option value="years">Years</option>
+                            <option value="months">Months</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select id="life-stage">
+                            <option value="">Select life stage</option>
+                            <option value="baby">Baby (0-1 year)</option>
+                            <option value="young">Young (1-3 years)</option>
+                            <option value="adult">Adult (3-8 years)</option>
+                            <option value="senior">Senior (8+ years)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group symptom-selector">
+                <label>Select Symptoms</label>
+                <p>Check all symptoms your pet is experiencing:</p>
+                <div class="search-symptoms">
+                    <input type="text" id="symptom-search" placeholder="Search symptoms...">
+                </div>
+                <div id="symptoms-container">
+                    <!-- Symptoms will be added here dynamically -->
+                </div>
+            </div>
+            
+            <button class="btn" id="predict-btn">Analyze Symptoms</button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Analyzing symptoms...</p>
+        </div>
+
+        <div class="result-container" id="result-container" style="display: none;">
+            <h2>Analysis Results</h2>
+            <div id="results-list">
+                <!-- Results will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"> </script>
+</body>
+</html>

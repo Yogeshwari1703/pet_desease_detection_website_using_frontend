@@ -1,325 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PetCare Pro - Animal Care & Disease Prevention</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* ===== MODERN CSS RESET ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* ===== GLOBAL STYLES ===== */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      background: #f9f9ff;
-      color: #333;
-    }
-
-    header {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      padding: 1.5rem;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      font-weight: 300;
-      opacity: 0.9;
-    }
-
-    /* ===== SEARCH & FILTER ===== */
-    .search-container {
-      display: flex;
-      justify-content: center;
-      padding: 1.5rem;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    #search {
-      padding: 0.8rem 1rem;
-      width: min(80%, 500px);
-      border: 2px solid #e0e0ff;
-      border-radius: 50px;
-      font-size: 1rem;
-      outline: none;
-      transition: all 0.3s;
-    }
-
-    #search:focus {
-      border-color: #667eea;
-      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
-    }
-
-    /* ===== ANIMAL GRID ===== */
-    .animal-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.8rem;
-      padding: 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .animal-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      position: relative;
-    }
-
-    .animal-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    .animal-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .animal-info {
-      padding: 1.5rem;
-    }
-
-    .animal-name {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-      color: #444;
-    }
-
-    .animal-type {
-      display: inline-block;
-      background: #e0e7ff;
-      color: #667eea;
-      padding: 0.3rem 0.8rem;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .quick-tip {
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 0.5rem;
-    }
-
-    /* ===== MODAL ===== */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(3px);
-      animation: fadeIn 0.3s;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .modal-content {
-      background: white;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 700px;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      position: relative;
-    }
-
-    .modal-header {
-      padding: 1.5rem;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      border-radius: 12px 12px 0 0;
-      position: relative;
-    }
-
-    .modal-title {
-      font-size: 1.8rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .modal-subtitle {
-      opacity: 0.9;
-      font-weight: 300;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 1.8rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .close-btn:hover {
-      transform: rotate(90deg);
-    }
-
-    .modal-body {
-      padding: 1.5rem;
-    }
-
-    .section-title {
-      font-size: 1.3rem;
-      margin: 1.5rem 0 1rem;
-      color: #444;
-      border-left: 4px solid #667eea;
-      padding-left: 0.8rem;
-    }
-
-    .care-tip {
-      margin-bottom: 1rem;
-      padding-left: 1.2rem;
-      border-left: 3px solid #a5b4fc;
-    }
-
-    .disease-list {
-      list-style-type: none;
-    }
-
-    .disease-item {
-      background: #f8f9ff;
-      margin-bottom: 0.8rem;
-      padding: 0.8rem 1rem;
-      border-radius: 6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .detect-btn {
-      background: #667eea;
-      color: white;
-      border: none;
-      padding: 0.4rem 0.8rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.8rem;
-      transition: all 0.2s;
-    }
-
-    .detect-btn:hover {
-      background: #5a6fd1;
-    }
-
-    .emergency-contacts {
-      background: #fff5f5;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-top: 1.5rem;
-    }
-
-    .contact-item {
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-item a {
-      color: #ef4444;
-      text-decoration: none;
-    }
-
-    .contact-item a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .animal-grid {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-      }
-
-      .modal-content {
-        width: 95%;
-      }
-    }
-
-    /* ===== UTILITY CLASSES ===== */
-    .text-center {
-      text-align: center;
-    }
-
-    .mt-1 { margin-top: 0.5rem; }
-    .mt-2 { margin-top: 1rem; }
-    .mt-3 { margin-top: 1.5rem; }
-  </style>
-</head>
-<body>
-  <header>
-    <h1><i class="fas fa-paw"></i> JivRaksha</h1>
-    <p class="subtitle">Animal Care Guide & Disease Prevention</p>
-  </header>
-
-  <div class="search-container">
-    <input type="text" id="search" placeholder="Search animals (e.g., 'dog', 'cow')..." autocomplete="off">
-  </div>
-
-  <div class="animal-grid" id="animalGrid">
-    <!-- Animals loaded via JavaScript -->
-  </div>
-
-  <!-- Care Tips Modal -->
-  <div class="modal" id="careModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="modalTitle">Dog Care Guide</h2>
-        <p class="modal-subtitle" id="modalSubtitle">Canine</p>
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-      </div>
-      <div class="modal-body">
-        <h3 class="section-title"><i class="fas fa-heart"></i> Essential Care Tips</h3>
-        <div id="modalTips"></div>
-
-        <h3 class="section-title"><i class="fas fa-bug"></i> Common Diseases</h3>
-        <ul class="disease-list" id="diseaseList"></ul>
-
-        <h3 class="section-title"><i class="fas fa-syringe"></i> Vaccination Schedule</h3>
-        <div id="vaccinationInfo"></div>
-
-        <div class="emergency-contacts">
-          <h3 class="section-title"><i class="fas fa-phone-alt"></i> Emergency Contacts</h3>
-          <div id="emergencyContacts"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // ===== ANIMAL DATA =====
+  // ===== ANIMAL DATA =====
     const animals = [
-  // Cow (existing)
+ 
   {
         name: "Dog",
         type: "Pet",
@@ -374,7 +55,7 @@
     ]
   },
 
-  // Buffalo
+  
   {
     name: "Buffalo",
     type: "Livestock",
@@ -402,7 +83,7 @@
     ]
   },
 
-  // Turtle
+ 
   {
     name: "Turtle",
     type: "Reptile",
@@ -429,7 +110,7 @@
     ]
   },
 
-  // Fish
+ 
   {
     name: "Fish",
     type: "Aquatic",
@@ -456,7 +137,7 @@
     ]
   },
 
-  // Cat
+  
   {
     name: "Cat",
     type: "Pet",
@@ -484,7 +165,7 @@
     ]
   },
 
-  // Birds
+
   {
     name: "Birds",
     type: "Avian",
@@ -511,7 +192,7 @@
     ]
   },
 
-  // Rabbit
+
   {
     name: "Rabbit",
     type: "Small Pet",
@@ -538,32 +219,6 @@
     ]
   },
 
-  // Goat
-//   {
-//     name: "Goat",
-//     type: "Livestock",
-//     image: "https://source.unsplash.com/random/600x400/?goat",
-//     tips: [
-//       "Provide loose minerals formulated for goats",
-//       "Rotate grazing areas to prevent parasites",
-//       "Trim hooves every 6-8 weeks",
-//       "Ensure proper fencing (they're escape artists)",
-//       "Provide shelter from rain and wind"
-//     ],
-//     diseases: [
-//       { name: "Caseous Lymphadenitis", detectCode: "CL-GOAT-01" },
-//       { name: "Caprine Arthritis Encephalitis", detectCode: "CAE-GOAT-02" },
-//       { name: "Barber Pole Worm", detectCode: "BPW-GOAT-03" }
-//     ],
-//     vaccinations: [
-//       "CDT (Clostridial) - Annually",
-//       "Caseous Lymphadenitis - If in infected herd"
-//     ],
-//     emergencyContacts: [
-//       "Goat Veterinarian: Dr. Hooves (555-9876)",
-//       "Goat Emergency Hotline: 1-800-GOAT-911"
-//     ]
-//   }
 ];
 
     // ===== INITIALIZE PAGE =====
@@ -673,6 +328,3 @@
         closeModal();
       }
     });
-  </script>
-</body>
-</html>

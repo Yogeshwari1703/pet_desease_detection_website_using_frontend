@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetHealth Pro - Disease Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>JivRaksha</h1>
+            <p>Advanced pet disease detection system</p>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('owner')">Pet Owner</div>
+            <div class="tab" onclick="switchTab('vet')">Veterinarian</div>
+        </div>
+
+        <!-- Pet Owner Login -->
+        <div id="owner-login" class="form-container active">
+            <div class="form-group">
+                <label for="owner-email">Email or Phone Number</label>
+                <input type="text" id="owner-email" placeholder="Enter your email or phone number">
+            </div>
+            <div class="form-group">
+                <label for="owner-password">Password</label>
+                <input type="password" id="owner-password" placeholder="Enter your password">
+            </div>
+            <div class="error-message" id="owner-error"></div>
+            <div class="success-message" id="owner-success"></div>
+            <div class="forgot-password">
+                <a href="#" onclick="forgotPassword('owner')">Forgot Password?</a>
+            </div>
+            <button class="btn" onclick="login('owner')">Log In</button>
+            <div class="signup-link">
+                Don't have an account? <a href="#" onclick="showSignupOptions()">Sign up</a>
+            </div>
+        </div>
+
+        <!-- Veterinarian Login -->
+        <div id="vet-login" class="form-container">
+            <div class="form-group">
+                <label for="vet-email">Email or Phone Number</label>
+                <input type="text" id="vet-email" placeholder="Enter your email or phone number">
+            </div>
+            <div class="form-group">
+                <label for="vet-password">Password</label>
+                <input type="password" id="vet-password" placeholder="Enter your password">
+            </div>
+            <div class="error-message" id="vet-error"></div>
+            <div class="success-message" id="vet-success"></div>
+            <div class="forgot-password">
+                <a href="#" onclick="forgotPassword('vet')">Forgot Password?</a>
+            </div>
+            <button class="btn" onclick="login('vet')">Log In</button>
+            <div class="signup-link">
+                Don't have an account? <a href="#" onclick="showSignupOptions()">Sign up</a>
+            </div>
+        </div>
+
+        <!-- OTP Verification -->
+        <div id="otp-container" class="otp-container">
+            <div class="form-group">
+                <label for="otp">Enter OTP</label>
+                <input type="text" id="otp" placeholder="Enter the OTP sent to you">
+                <div class="otp-timer" id="otp-timer">Time remaining: 30 seconds</div>
+            </div>
+            <div class="error-message" id="otp-error"></div>
+            <div class="spinner" id="otp-spinner"></div>
+            <button class="btn" onclick="verifyOTP()">Verify OTP</button>
+        </div>
+
+        <!-- Signup Options -->
+        <div id="signup-options" class="signup-options">
+            <p>Sign up as:</p>
+            <button onclick="showSignupForm('owner')">Pet Owner</button>
+            <button onclick="showSignupForm('vet')">Veterinarian</button>
+        </div>
+
+        <!-- Pet Owner Signup Form -->
+        <div id="owner-signup" class="form-container">
+            <div class="form-group">
+                <label for="owner-name">Full Name</label>
+                <input type="text" id="owner-name" placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="owner-signup-phone">Phone Number</label>
+                <input type="text" id="owner-signup-phone" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label for="owner-signup-email">Email</label>
+                <input type="email" id="owner-signup-email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="owner-signup-address">Address</label>
+                <input type="text" id="owner-signup-address" placeholder="Enter your address">
+            </div>
+            <div class="form-group">
+                <label for="owner-signup-password">Password</label>
+                <input type="password" id="owner-signup-password" placeholder="Create a password">
+            </div>
+            <div class="error-message" id="owner-signup-error"></div>
+            <div class="spinner" id="owner-spinner"></div>
+            <button class="btn" onclick="signup('owner')">Sign Up</button>
+            <div class="signup-link">
+                Already have an account? <a href="#" onclick="showLogin()">Log in</a>
+            </div>
+        </div>
+
+        <!-- Veterinarian Signup Form -->
+        <div id="vet-signup" class="form-container">
+            <div class="form-group">
+                <label for="vet-name">Full Name</label>
+                <input type="text" id="vet-name" placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="vet-signup-email">Email</label>
+                <input type="email" id="vet-signup-email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="vet-signup-phone">Phone Number</label>
+                <input type="text" id="vet-signup-phone" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label for="vet-certificate">Certificate (Upload Image)</label>
+                <input type="file" id="vet-certificate" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label for="vet-location">Hospital/Clinic Location</label>
+                <input type="text" id="vet-location" placeholder="Enter your practice location">
+            </div>
+            <div class="form-group">
+                <label for="vet-experience">Years of Experience</label>
+                <input type="number" id="vet-experience" min="1" placeholder="Minimum 1 year required">
+            </div>
+            <div class="form-group">
+                <label for="vet-signup-password">Password</label>
+                <input type="password" id="vet-signup-password" placeholder="Create a password">
+            </div>
+            <div class="error-message" id="vet-signup-error"></div>
+            <div class="spinner" id="vet-spinner"></div>
+            <button class="btn" onclick="signup('vet')">Sign Up</button>
+            <div class="signup-link">
+                Already have an account? <a href="#" onclick="showLogin()">Log in</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"> </script>
+
+    
+</body>
+</html> 
