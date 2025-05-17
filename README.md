@@ -44,5 +44,8 @@ I created this project to explore how technology can assist in basic animal heal
 
 I'm passionate about building useful web applications and am currently looking for roles in **Frontend Development** or **Fullstack Development**. This project reflects my ability to design clean user interfaces, think through user roles, and plan for scalable improvements.
 
+💡 **Tip:** Click on your profile picture (top-left corner) after logging in to access additional features and navigation options!
+
+
 ---
 
